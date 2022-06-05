@@ -9,7 +9,7 @@ export default class SidebarCompnent extends Component {
       >
         <a
           className="sidebar-brand d-flex align-items-center justify-content-center"
-          href="index.html"
+          href="/index"
         >
           <div className="sidebar-brand-icon rotate-n-15">
             <i className="fas fa-laugh-wink"></i>
@@ -33,7 +33,7 @@ export default class SidebarCompnent extends Component {
         <div className="sidebar-heading">Interface</div>
 
         <li className="nav-item">
-          <a className="nav-link">
+          <a className="nav-link" href="/order">
             <i className="fas fa-border-all"></i>
             <span>Orders</span>
           </a>
@@ -41,7 +41,7 @@ export default class SidebarCompnent extends Component {
         <li className="nav-item">
           <a
             className="nav-link collapsed"
-            href="#"
+            href=""
             data-toggle="collapse"
             data-target="#collapseUtilities"
             aria-expanded="true"
@@ -65,7 +65,7 @@ export default class SidebarCompnent extends Component {
         <li className="nav-item">
           <a
             className="nav-link collapsed"
-            href="#"
+            href=""
             data-toggle="collapse"
             data-target="#collapsePages"
             aria-expanded="true"

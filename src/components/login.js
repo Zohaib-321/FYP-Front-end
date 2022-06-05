@@ -32,7 +32,7 @@ export default class login extends Component {
         // }
 
         if (result.auth_token) {
-          console.log(result);
+          alert(result.auth_token);
           window.localStorage.setItem("token", result.auth_token);
           window.localStorage.setItem("userId", result.user_id);
           this.props.history.push({
