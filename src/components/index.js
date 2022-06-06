@@ -169,7 +169,11 @@ export default class index extends Component {
                         </div>
                         <div className="card-body">
                           <div className="chart-area">
-                            <canvas id="myAreaChart"></canvas>
+                            {/* <canvas id="myAreaChart"></canvas> */}
+                            <canvas id="myCanvas">
+Your browser does not support the canvas tag.
+</canvas>
+
                           </div>
                         </div>
                       </div>

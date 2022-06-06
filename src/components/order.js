@@ -39,7 +39,7 @@ export default class order extends Component {
           >
             <a
               className="sidebar-brand d-flex align-items-center justify-content-center"
-              href="index.html"
+              href="/index"
             >
               <div className="sidebar-brand-icon rotate-n-15">
                 <i className="fas fa-laugh-wink"></i>
