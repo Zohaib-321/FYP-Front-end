@@ -8,7 +8,7 @@ export default class login extends Component {
     this.state = { email: "" };
     this.state = { password: "" };
   }
-
+ 
   mySubmitHandler = (event) => {
     event.preventDefault();
     var formdata = new FormData();
@@ -35,16 +35,35 @@ export default class login extends Component {
           alert(result.auth_token);
           window.localStorage.setItem("token", result.auth_token);
           window.localStorage.setItem("userId", result.user_id);
+          if(result.detail_type == 'distributor')
+          {
+            alert("distributor");
           this.props.history.push({
             pathname: "/index",
             state: { detail: result.auth_token },
           });
+        }
+        else if(result.detail_type == 'medstore')
+        {
+          alert("medstore");
+          this.props.history.push({
+            pathname: "/medstore",
+            state: { detail: result.auth_token },
+          });
+        }
+        else if(result.detail_type == 'manufacture')
+          {
+            alert("manufacture");
+            this.props.history.push({
+              pathname: "/manufacture",
+              state: { detail: result.auth_token },
+            });
+          }
         } else {
           alert("Invalid Credential");
         }
       })
       .catch((error) => alert("Invalid Credential", error));
-
     alert("Welcome " + this.state.email);
   };
 
@@ -56,7 +75,9 @@ export default class login extends Component {
   };
 
   render() {
+  
     return (
+
       <div className="Login">
         <div class="container">
           <div class="row justify-content-center">

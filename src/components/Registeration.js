@@ -16,57 +16,37 @@ export default class Registeration extends Component {
 
     this.state = {
       value: "distributor",      
-      value: 'medstore',
-      value: 'manufacture',
-      hidden: true
+      value: "medstore",
+      value: "manufacture",
+      hidden: true 
     };
 
     //  this.handleChange = this.handleChange.bind(this);
   }
  
-  // handleChange(event) {
-  //   this.setState({value: event.target.value});
-    
-  //   if(this.state.value === "Medstore" && this.state.value  === "Manufactor")
-  //   {
-  //     this.setState({
-  //       hidden: !this.state.hidden
-  //     })
-  //   }
-  //   this.setState({ detail_type: event.target.value });
-    
-    // this.setState({ value: event.target.value });
-    // // console.log(ko);
-    // // if(this.setState.value === "Medstore" && this.setState.value === "Manufactor")
-    
-    
-    // this.setState({
-      
-      
-    //   hidden: !this.state.hidden
-      
-    // }); 
-    // 
-  // }
+ 
  
   handleChange = (event) =>
   {
     event.preventDefault();
    this.setState({value: event.target.value});
-   if(event.target.value == "medstore"){
-    
-    this.setState({ hidden: true });
-   }
+  
    if(event.target.value == "distributor")
    {
     this.setState({ hidden: !true });
    }
-   if(event.target.value == "manufacture")
+   else if(event.target.value == "medstore"){
+    
+    this.setState({ hidden: true });
+   }
+   else if(event.target.value == "manufacture")
    {
     this.setState({ hidden: true });
    }
     this.setState({ detail_type: event.target.value });
+
     
+  
   }
 
   mySubmitHandler = (event) => {
@@ -96,7 +76,7 @@ export default class Registeration extends Component {
           alert("Signed UP SucsexFully");
 
           this.props.history.push({
-            pathname: "/index",
+            pathname: "/login",
             state: { detail: result.text },
           });
         } else {
@@ -200,7 +180,7 @@ export default class Registeration extends Component {
     
                 <div className="form-group" hidden = { !this.state.hidden }>
                     <label>Address</label>
-                    <input type="text" className="form-control"  required = "require" placeholder="Address"onChange={this.myaddressHandler} />
+                    <input type="text" className="form-control" placeholder="Address"onChange={this.myaddressHandler} />
                 </div>
                       {/* </div> */}
                       <button
